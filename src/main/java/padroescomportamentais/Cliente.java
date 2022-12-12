@@ -40,7 +40,6 @@ public abstract class Cliente {
     }
 
     public float calcularMedia() {
-        System.out.println((this.medicao1 + this.medicao2) / 2);
         return (this.medicao1 + this.medicao2) / 2;
     }
 
