@@ -26,18 +26,29 @@ class ClienteMonofásicoTest {
         clienteMonofasico.setMedicao2(230);
         assertEquals("Tensão Adequada",clienteMonofasico.verificarTensao());
     }
-
     @Test
-    void deveRetornarTensaoPrecária(){
+    void deveRetornarTensaoPrecáriaAlta(){
+        clienteMonofasico.setMedicao1(266);
+        clienteMonofasico.setMedicao2(267);
+        assertEquals("Tensão Precária",clienteMonofasico.verificarTensao());
+    }
+    @Test
+    void deveRetornarTensaoPrecáriaBaixa(){
         clienteMonofasico.setMedicao1(228);
         clienteMonofasico.setMedicao2(230);
         assertEquals("Tensão Precária",clienteMonofasico.verificarTensao());
     }
 
     @Test
-    void deveRetornarTensaoCritica(){
+    void deveRetornarTensaoCriticaAlta(){
         clienteMonofasico.setMedicao1(269);
         clienteMonofasico.setMedicao2(270);
+        assertEquals("Tensão Crítica",clienteMonofasico.verificarTensao());
+    }
+    @Test
+    void deveRetornarTensaoCriticaBaixa(){
+        clienteMonofasico.setMedicao1(218);
+        clienteMonofasico.setMedicao2(217);
         assertEquals("Tensão Crítica",clienteMonofasico.verificarTensao());
     }
     @Test

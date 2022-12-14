@@ -28,16 +28,28 @@ class ClienteTrifasicoTest {
     }
 
     @Test
-    void deveRetornarTensaoPrecária(){
+    void deveRetornarTensaoPrecáriaAlta(){
         clienteTrifasico.setMedicao1(228);
         clienteTrifasico.setMedicao2(230);
         assertEquals("Tensão Precária",clienteTrifasico.verificarTensao());
     }
+    @Test
+    void deveRetornarTensaoPrecáriaBaixa(){
+        clienteTrifasico.setMedicao1(190);
+        clienteTrifasico.setMedicao2(200);
+        assertEquals("Tensão Precária",clienteTrifasico.verificarTensao());
+    }
 
     @Test
-    void deveRetornarTensaoCritica(){
+    void deveRetornarTensaoCriticaAlta(){
         clienteTrifasico.setMedicao1(269);
         clienteTrifasico.setMedicao2(270);
+        assertEquals("Tensão Crítica",clienteTrifasico.verificarTensao());
+    }
+    @Test
+    void deveRetornarTensaoCriticaBaixa(){
+        clienteTrifasico.setMedicao1(180);
+        clienteTrifasico.setMedicao2(175);
         assertEquals("Tensão Crítica",clienteTrifasico.verificarTensao());
     }
     @Test

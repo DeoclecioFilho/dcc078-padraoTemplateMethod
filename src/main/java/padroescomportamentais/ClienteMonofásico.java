@@ -2,6 +2,7 @@ package padroescomportamentais;
 
 public class ClienteMonofásico extends Cliente {
 
+    // resolução 505/2001 da ANEEL
     @Override
     public String verificarTensao() {
         int tn = 254;
